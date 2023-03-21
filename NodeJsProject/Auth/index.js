@@ -6,7 +6,7 @@ const cors = require("cors");
 const token = require("jsonwebtoken");
 const tokenKey = "e-comm";
 
-require("./config");
+require("../config");
 
 app.use(express.json());
 app.use(cors());
@@ -24,7 +24,7 @@ app.post("/register", async (request, response) => {
     }
     response.send({ result, token: token });
   });
-});
+}); 
 
 app.post("/login", async (request, response) => {
   if (request.body.email && request.body.password) {
